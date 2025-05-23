@@ -1,0 +1,352 @@
+/* src/App.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px 0;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #f5c6cb;
+  font-weight: 500;
+}
+
+/* Kompaktowy pasek wyszukiwania */
+.search-bar {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-select, .genre-select, .search-input, .form-input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.filter-select, .genre-select {
+  min-width: 120px;
+  background-color: #f8f9fa;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  max-width: 400px;
+}
+
+.search-button, .reset-button, .submit-button, .cancel-button, .edit-button, .delete-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-button:hover, .reset-button:hover, .submit-button:hover, 
+.cancel-button:hover, .edit-button:hover, .delete-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-button:active, .reset-button:active, .submit-button:active, 
+.cancel-button:active, .edit-button:active, .delete-button:active {
+  transform: translateY(0);
+}
+
+.search-button {
+  background-color: #4a6da7;
+  color: white;
+}
+
+.search-button:hover {
+  background-color: #3a5a8f;
+}
+
+.reset-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.reset-button:hover {
+  background-color: #5a6268;
+}
+
+/* Główny układ treści */
+.main-content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+}
+
+/* Panel boczny z formularzami */
+.side-panel {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.add-album-panel h2, .edit-album-panel h2, .albums-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #333;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.album-form {
+  display: grid;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.submit-button {
+  background-color: #28a745;
+  color: white;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Sekcja z albumami */
+.albums-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.loading-indicator {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: #666;
+}
+
+.no-albums-message {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.album-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.album-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.album-cover {
+  height: 180px;
+  overflow: hidden;
+}
+
+.album-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.album-card:hover .album-cover img {
+  transform: scale(1.05);
+}
+
+.album-info {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.album-title {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-band {
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.album-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.album-genre {
+  background-color: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.album-actions {
+  display: flex;
+  border-top: 1px solid #eee;
+}
+
+.edit-button, .delete-button {
+  flex: 1;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.edit-button {
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+.edit-button:hover {
+  background-color: #e2e6ea;
+}
+
+.delete-button {
+  background-color: #f8f9fa;
+  color: #dc3545;
+}
+
+.delete-button:hover {
+  background-color: #fdf1f2;
+}
+
+/* Responsywność */
+@media (max-width: 992px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .side-panel {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-input, .filter-select, .genre-select {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .albums-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+  
+  .album-cover {
+    height: 160px;
+  }
+}
