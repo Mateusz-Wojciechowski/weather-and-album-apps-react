@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { WiDaySunny, WiRain, WiSnow, WiCloudy, WiThunderstorm, WiSmog } from 'react-icons/wi';
 import './App.css';
 
-// W rzeczywistej aplikacji klucz API powinien być w zmiennych środowiskowych
-const apiKey = 'd790ca786ef5a8a2e7653183e8a7cc1a'; // Zastąp swoim kluczem API z OpenWeatherMap
+
+const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
 
 const weatherConditions = {
   Thunderstorm: {
